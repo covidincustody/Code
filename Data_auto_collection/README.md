@@ -10,7 +10,7 @@ python3 run.py
 
 When everything is ready, and please ensure that the py file can run normally, please check the file address you set in the function to find the result of the operation and all the output is in CSV format.
 
-In each py file this is the place you need to change to your personal local saving address.
+In each utils.py file for differnt county this is the place you need to change to your personal local saving address.
  ![image](https://github.com/covidincustody/web-scrapers/blob/main/Data_auto_collection/address%20instruction.png)
 
 If you have any questions please contact info@covidincustody.org.
