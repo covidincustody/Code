@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import requests
 from bs4 import BeautifulSoup
