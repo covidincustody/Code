@@ -7,7 +7,7 @@ import operator
 import os
 from csv import writer
 
-def san_franciso():
+def san_franciso_auto():
     url='https://www.sfsheriff.com/covid-19-jail-community-programs-sfso-staff-data' #data update automatically; just run the code every day
     response = requests.get(url)
     results_page = BeautifulSoup(response.content,'lxml')
