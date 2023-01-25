@@ -14,6 +14,6 @@ In each utils.py file for differnt county this is the place you need to change t
  ![image](https://github.com/covidincustody/web-scrapers/blob/main/Data_auto_collection/address%20instruction.png)
  
  * For operator: The orders of columns are matched with those in the datasets and the web structures are different for each county. 
- You just need to copy the data in the csv to put them in the original dataset.*
+ You just need to copy the data in the csv to put them in the original dataset.
 
 If you have any questions please contact info@covidincustody.org.
