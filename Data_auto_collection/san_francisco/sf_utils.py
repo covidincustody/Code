@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[95]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -12,7 +6,6 @@ import openpyxl
 import operator
 import os
 from csv import writer
-
 
 
 def obtain_value(name,j):
@@ -33,6 +26,7 @@ def obtain_value(name,j):
     if count == len(name):
         result.append('Null')
     return result
+
 
 
 def san_franciso_auto():
