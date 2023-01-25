@@ -1,12 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 from sf_utils import *
 
-address=r'C:\Users\gemini\Desktop\Data_collection_SF.csv'###please change your local address right here
+address=r'C:\Users\gemini\Desktop\Data_collection_SF.csv' ###please change your local address right here
 
 if os.path.exists(address):
     with open(address,mode='r',encoding='utf-8') as ff:    
