@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 """
 install and import all the pachages we will use in this function
@@ -25,7 +23,6 @@ import pandas as pd
 from word2number import w2n
 
 
-# In[2]:
 
 
 def save_to_csv(address):
@@ -49,7 +46,6 @@ def save_to_csv(address):
     Data_collection.to_csv(address,index=False)
 
 
-# In[3]:
 
 
 def COVID_Data_Collection(url):
@@ -103,9 +99,6 @@ def COVID_Data_Collection(url):
         elif i!=0:                                                   #the package w2n.word_to_num will help us to do that
             perday[i]=w2n.word_to_num(str(perday[i]))
     return perday
-
-
-# In[23]:
 
 
 def output_csv(list_data):
