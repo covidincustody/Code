@@ -123,10 +123,7 @@ def output_csv(list_data):
     data = frame.drop_duplicates()
     data.to_csv(address,index=False)
     
-    
-
-
-# In[ ]:
+   
 
 
 
