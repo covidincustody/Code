@@ -100,13 +100,12 @@ def COVID_Data_Collection(url):#Obtain the data on the web
     return perday
 
 
-def alameda_auto_collection(filepath):
+def alameda_auto_collection(url,filepath):
     """
     Function: Obtain the latest data for alameda using 'ajax_request' and 'COVID_Data_Collection'
-    In: the file_path with '.csv' of your datafile for storing the data
+    In: url is the Ajax request url & the file_path with '.csv' of your datafile for storing the data
     Out: csv file with all required data
     """
-    url = 'https://content.govdelivery.com/accounts/ACSO/widgets/ACSO_WIDGET_2/0.json'#Ajax request url for Santa Rita jail
     url_dated=ajax_request(url)
     list_data=COVID_Data_Collection(url_dated)
     with open(filepath, 'a', newline='') as f_object:
