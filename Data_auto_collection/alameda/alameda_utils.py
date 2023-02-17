@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -178,4 +172,3 @@ def single_column_obtain(filepath,column_name):
             else:
                 return row[16]
             
-
