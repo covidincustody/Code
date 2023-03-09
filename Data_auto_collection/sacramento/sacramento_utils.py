@@ -123,7 +123,8 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
             if 'Hospitalizations (Incarcerated population, Net increase)' in cols:
                 intake_observation_net=str(i.get_text().split()[-1])[0:-1]
                 index = cols.index('Hospitalizations (Incarcerated population, Net increase)')
-                perday[index]=intake_observation_net            
+                perday[index]=intake_observation_net
+                
         if 'Deaths (Incarcerated population, Net increase)'in cols and 'deaths' in i.get_text():
             deaths=i.get_text().split()[-1]
             index = cols.index('Deaths (Incarcerated population, Net increase)')
