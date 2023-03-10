@@ -23,7 +23,7 @@ from word2number import w2n
 
 
 
-def create_csv_with_columns(address,cols=['Date','Active Cases (Incarcerated population, Net increase)','Confirmed Cases (Incarcerated population, cumulative)','Deaths (Incarcerated population, Net increase)','Tests (Incarcerated population, Net increase)',
+def save_to_csv(address,cols=['Date','Active Cases (Incarcerated population, Net increase)','Confirmed Cases (Incarcerated population, cumulative)','Deaths (Incarcerated population, Net increase)','Tests (Incarcerated population, Net increase)',
                                    'Tests (Incarcerated population, cumulative)','Population (Incarcerated population, Net increase)','Hospitalizations (Incarcerated population, Net increase)','Hospitalizations (Incarcerated population, cumulative)',
                                    'At least one dose (Incarcerated population, cumulative)','First dose (Incarcerated population, Net increase)','Second dose (Incarcerated population, Net increase)','Boosted (Incarcerated population, Net increase)',
                                    'Total dose provided (Incarcerated population, Net increase)']):
@@ -44,17 +44,14 @@ def create_csv_with_columns(address,cols=['Date','Active Cases (Incarcerated pop
     Returns:
     None
     """  
-    Data_collection = pd.DataFrame(columns=cols)
-    if os.path.exists(address):
-        Data_collection = pd.read_csv(address)
-        existing_cols = list(Data_collection.columns)
-        if existing_cols != cols:
-            missing_cols = list(set(cols) - set(existing_cols))
-            for col in missing_cols:
-                Data_collection[col] = ''
+    if os.path.exists(address) and list(pd.read_csv(address).columns) == cols:
+        with open(address,mode='r',encoding='utf-8') as ff:    
+            print("File exist")
+    elif os.path.exists(address) and list(pd.read_csv(address).columns) !=cols:
+        raise ValueError('You are changing the columns go want to gather compare to previse, please change your local save address to save new data file')
     else:
         Data_collection = pd.DataFrame(columns=cols)
-    Data_collection.to_csv(address, index=False)
+        Data_collection.to_csv(address,index=False)
 
 
 
@@ -123,8 +120,7 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
             if 'Hospitalizations (Incarcerated population, Net increase)' in cols:
                 intake_observation_net=str(i.get_text().split()[-1])[0:-1]
                 index = cols.index('Hospitalizations (Incarcerated population, Net increase)')
-                perday[index]=intake_observation_net
-                
+                perday[index]=intake_observation_net            
         if 'Deaths (Incarcerated population, Net increase)'in cols and 'deaths' in i.get_text():
             deaths=i.get_text().split()[-1]
             index = cols.index('Deaths (Incarcerated population, Net increase)')
@@ -170,25 +166,25 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
     return perday
 
 
+
 def output_csv(list_data):
-    """   
-    Function Name:
+    
+    """
+    Function Name: 
     output_csv
-
+    
     Description:
-    This function takes a list of data as input and writes it to a CSV file. It then reads the CSV file into a Pandas dataframe, 
-    removes any duplicate rows, and overwrites the original CSV file with the updated data.
-    Note that user will need to define the "address" variable within the function before calling it, 
-    as this specifies the file path for the CSV file. Also note that the "address" variable should be a string containing the file
-    path, including the file name and file extension.
-
-    Input:
-    list_data: A list of data to be written to a CSV file
-
-    Output:
-    perday (numpy.ndarray): A numpy array of the values extracted from the webpage for each column.
-
-    """    
+    The output_csv function writes the data provided in the list_data parameter to a CSV file. The CSV file is created if it doesn't exist, and if it exists, 
+    the data is appended to the end of the file. The function then removes any duplicate rows from the CSV file to ensure data integrity.
+    
+    Parameters:
+    list_data: a list of data to be written to a CSV file
+    
+    Returns:
+    This function does not return any value..
+    """
+    
+    
     with open(address, 'a', newline='') as f_object:  
         # Pass the CSV  file object to the writer() function
         writer_object = writer(f_object)
