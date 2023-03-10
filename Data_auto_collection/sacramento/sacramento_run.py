@@ -20,6 +20,6 @@ from a specified URL, appends the data to the CSV file, removes any duplicate ro
 url='https://www.sacsheriff.com/pages/covid19.php'
 cols=['Active Cases (Incarcerated population, Net increase)','Date']
 address=r'C:\Users\kangk\Desktop\Data_collection_Sacramento.csv'
-create_csv_with_columns(address,cols)#call save_to_csv to create or open csv file
+save_to_csv(address,cols)#call save_to_csv to create or open csv file
 list_data=COVID_Data_Collection(url,cols)# call COVID_Data_Collection to extract data
 output_csv(list_data)# call output_csv to output final csv file 
