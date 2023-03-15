@@ -12,7 +12,7 @@ def obtain_value(name,j):
     """
     Function: Obtain matched value in the name list
     In: name is a list and j is a string
-    Out: string
+    Out: a list containing the matched value
     """
     result = []
     count = 0
@@ -29,14 +29,12 @@ def obtain_value(name,j):
 
 
 
-def san_franciso_auto():
+def san_franciso_auto(url):
     """
     Function: san_franciso_auto collection
-    In: None
-    Out: dataframe matched with the dataset
+    In: url for the san_franciso website
+    Out: dataframe matched with the dataset containing from Active Cases (Incarcerated population, current) to Bookings (Incarcerated population, cumulative)
     """
-    
-    url='https://www.sfsheriff.com/covid-19-jail-community-programs-sfso-staff-data' 
     response = requests.get(url)
     results_page = BeautifulSoup(response.content,'lxml')
     A=results_page.find_all('div',class_='stat-stat')
