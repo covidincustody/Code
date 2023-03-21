@@ -1,11 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-# First install sofeware from https://github.com/UB-Mannheim/tesseract/wiki    
-# when install this software please do not change the path!
+# First install software from https://github.com/UB-Mannheim/tesseract/wiki    
+# After installation, do not change the path
 def la_auto_collection():
     get_ipython().system('pip install pytesseract')
     get_ipython().system('pip install pillow')
@@ -22,7 +16,7 @@ def la_auto_collection():
     from PIL import Image
     from pytesseract import pytesseract
     from csv import writer
-    address=r'C:\Users\kangk\Desktop\Data_collection_LA.csv'###please change your local address right here
+    address=r'C:\Users\kangk\Desktop\Data_collection_LA.csv' ###please change your local address right here
     if os.path.exists(address):
         with open(address,mode='r',encoding='utf-8') as ff:    
             print("File exist")
@@ -86,4 +80,3 @@ def la_auto_collection():
     frame=pd.read_csv(address)
     data = frame.drop_duplicates()
     data.to_csv(address,index=False)
-
