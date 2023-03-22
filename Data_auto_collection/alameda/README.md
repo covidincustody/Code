@@ -2,13 +2,13 @@ The purpose of this part is to use code to automatically fetch data from alameda
 
 
 * Usage:
-Please change the address in the sf_run.py file into your local address.
-The url is just for the san francisco offical website
+Please change the filepath in the alameda_run.py file into your local address.
+The url is just for the alameda offical website
 
-Once sf_run.py and sf_utils files are downloaded, please run the following:
+Once alameda_run.py and alameda_utils files are downloaded, please run the following:
 
 ```
-python3 sf_run.py
+python3 alameda_run.py
 ```
 
 When everything is ready, and please ensure that the py file can run normally, please check the file address you set in the function to find the result of the operation and all the output is in CSV format.
