@@ -8,7 +8,7 @@ The url is just for the san francisco offical website
 Once sf_run.py and sf_utils files are downloaded, please run the following:
 
 ```
-python3 run.py
+python3 sf_run.py
 ```
 
 When everything is ready, and please ensure that the py file can run normally, please check the file address you set in the function to find the result of the operation and all the output is in CSV format.
