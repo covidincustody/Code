@@ -1,9 +1,7 @@
-### About the Project
-
-The purpose of this part of the project is to use code to automatically fetch data from different counties offical website.
+The purpose of this part is to use code to automatically fetch data from san francisco offical website.
 
 
-### Usage
+Usage:
 Some of the counties have installation required. So before runing the data please check the common in the py file and follow the installation steps carefully. Data from all sources will be pulled directly from the webpage, and an output csv and the final data set will be stored in the same directory as utils.py and run.py. Once both code files are downloaded, please run the following:
 
 python3 run.py
