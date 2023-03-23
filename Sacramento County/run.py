@@ -1,4 +1,5 @@
-from sacramento_utils import *
+from utils import *
+
 """The code imports all functions from the module sacramento_utils using the syntax "from sacramento_utils import *". 
 This means that all functions defined in sacramento_utils can be used directly in the code without the need to specify the module name.
 
@@ -20,6 +21,6 @@ from a specified URL, appends the data to the CSV file, removes any duplicate ro
 url='https://www.sacsheriff.com/pages/covid19.php'
 cols=['Active Cases (Incarcerated population, Net increase)','Date']
 address=r'C:\Users\kangk\Desktop\Data_collection_Sacramento.csv'
-save_to_csv(address,cols)#call save_to_csv to create or open csv file
-list_data=COVID_Data_Collection(url,cols)# call COVID_Data_Collection to extract data
-output_csv(list_data)# call output_csv to output final csv file 
+save_to_csv(address,cols) # Call to create or open csv file
+list_data=COVID_Data_Collection(url,cols) # Call to extract data from the url
+output_csv(list_data) # Call to write output to final csv file 
