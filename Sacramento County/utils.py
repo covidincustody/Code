@@ -23,10 +23,7 @@ from word2number import w2n
 
 
 
-def save_to_csv(address,cols=['Date','Active Cases (Incarcerated population, Net increase)','Confirmed Cases (Incarcerated population, cumulative)','Deaths (Incarcerated population, Net increase)','Tests (Incarcerated population, Net increase)',
-                                   'Tests (Incarcerated population, cumulative)','Population (Incarcerated population, Net increase)','Hospitalizations (Incarcerated population, Net increase)','Hospitalizations (Incarcerated population, cumulative)',
-                                   'At least one dose (Incarcerated population, cumulative)','First dose (Incarcerated population, Net increase)','Second dose (Incarcerated population, Net increase)','Boosted (Incarcerated population, Net increase)',
-                                   'Total dose provided (Incarcerated population, Net increase)']):
+def save_to_csv(address,cols):
 
     """
     Function Name: 
@@ -56,10 +53,7 @@ def save_to_csv(address,cols=['Date','Active Cases (Incarcerated population, Net
 
 
 
-def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated population, Net increase)','Confirmed Cases (Incarcerated population, cumulative)','Deaths (Incarcerated population, Net increase)','Tests (Incarcerated population, Net increase)',
-                                   'Tests (Incarcerated population, cumulative)','Population (Incarcerated population, Net increase)','Hospitalizations (Incarcerated population, Net increase)','Hospitalizations (Incarcerated population, cumulative)',
-                                   'At least one dose (Incarcerated population, cumulative)','First dose (Incarcerated population, Net increase)','Second dose (Incarcerated population, Net increase)','Boosted (Incarcerated population, Net increase)',
-                                   'Total dose provided (Incarcerated population, Net increase)']):
+def COVID_Data_Collection(url,cols):
 
     """
     Function Name: 
