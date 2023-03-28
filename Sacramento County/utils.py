@@ -27,7 +27,7 @@ def save_to_csv(address,cols):
 
     """
     Function Name: 
-    create_csv_with_columns
+    save_to_csv
 
     Description:
     This function creates a CSV file with specified columns. If the CSV file already exists, the function checks if the existing columns match the specified columns. 
