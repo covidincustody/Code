@@ -1,6 +1,6 @@
 from utils import *
 
-"""The code imports all functions from the module sacramento_utils using the syntax "from sacramento_utils import *". 
+"""The code imports all functions from the module sacramento_utils using the syntax "from utils import *". 
 This means that all functions defined in sacramento_utils can be used directly in the code without the need to specify the module name.
 
 The code then defines a URL from which to extract COVID-19 data and specifies the columns to be extracted from the data.
