@@ -92,7 +92,7 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
             index = cols.index('Population (Incarcerated population, Net increase)')
             perday[index]=Total_Inmate
             
-        if 'COVID-19 tests' in i.get_text():
+        elif 'COVID-19 tests' in i.get_text():
             if 'Tests (Incarcerated population, cumulative)' in cols:
                 Total_test = re.findall(r"(.*?)[(]", i.get_text().split(':')[1])[0].strip()
                 index = cols.index('Tests (Incarcerated population, cumulative)')
@@ -102,7 +102,7 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
                 index = cols.index('Tests (Incarcerated population, Net increase)')
                 perday[index]=Total_test_net
                 
-        if 'Total number of confirmed COVID-19 cases since ' in i.get_text() :
+        elif 'Total number of confirmed COVID-19 cases since ' in i.get_text() :
             if 'Confirmed Cases (Incarcerated population, cumulative)' in cols:
                 Total_confirmed_March=re.findall(r"(.*?)[(]", i.get_text().split(':')[1])[0].strip()
                 index = cols.index('Confirmed Cases (Incarcerated population, cumulative)')
@@ -112,7 +112,7 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
                 index = cols.index('Active Cases (Incarcerated population, Net increase)')
                 perday[index]=Total_confirmed_March_net
                 
-        if 'intake observation/quarantine period since ' in i.get_text():
+        elif 'intake observation/quarantine period since ' in i.get_text():
             if 'Hospitalizations (Incarcerated population, cumulative)' in cols:
                 intake_observation=re.findall(r"(.*?)[(]", i.get_text().split(':')[1])[0].strip()
                 index = cols.index('Hospitalizations (Incarcerated population, cumulative)')
@@ -121,27 +121,27 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
                 intake_observation_net=str(i.get_text().split()[-1])[0:-1]
                 index = cols.index('Hospitalizations (Incarcerated population, Net increase)')
                 perday[index]=intake_observation_net            
-        if 'Deaths (Incarcerated population, Net increase)'in cols and 'deaths' in i.get_text():
+        elif 'Deaths (Incarcerated population, Net increase)'in cols and 'deaths' in i.get_text():
             deaths=i.get_text().split()[-1]
             index = cols.index('Deaths (Incarcerated population, Net increase)')
             perday[index]=deaths
             
-        if 'First dose (Incarcerated population, Net increase)' in cols and 'new inmates' in i.get_text():
+        elif 'First dose (Incarcerated population, Net increase)' in cols and 'new inmates' in i.get_text():
             new_inmates=i.get_text().split()[3]
             index = cols.index('First dose (Incarcerated population, Net increase)')
             perday[index]=new_inmates
             
-        if 'Second dose (Incarcerated population, Net increase)' in cols and '2nd doses' in i.get_text():
+        elif 'Second dose (Incarcerated population, Net increase)' in cols and '2nd doses' in i.get_text():
             second=i.get_text().split()[3]
             index = cols.index('Second dose (Incarcerated population, Net increase)')
             perday[index]=second
             
-        if 'Boosted (Incarcerated population, Net increase)' in cols and 'booster doses' in i.get_text():
+        elif 'Boosted (Incarcerated population, Net increase)' in cols and 'booster doses' in i.get_text():
             booster=i.get_text().split()[3]
             index = cols.index('Boosted (Incarcerated population, Net increase)')
             perday[index]=booster
             
-        if  'Total dose provided (Incarcerated population, Net increase)'in cols and  'doses provided' in i.get_text():
+        elif  'Total dose provided (Incarcerated population, Net increase)'in cols and  'doses provided' in i.get_text():
             total_dose=i.get_text().split()[2]
             index = cols.index('Total dose provided (Incarcerated population, Net increase)')
             perday[index]=total_dose
@@ -164,6 +164,7 @@ def COVID_Data_Collection(url,cols=['Date','Active Cases (Incarcerated populatio
         else:
             perday[i]=int(perday[i])
     return perday
+
 
 
 
